@@ -1,6 +1,5 @@
  
- /* Umumiy sahifa ko'rinishi */
-.todo-container {
+ .todo-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,8 +10,7 @@
   box-sizing: border-box;
 }
 
-/* Oq konteyner (karta) */
-.todo-box {
+ .todo-box {
   width: 100%;
   max-width: 480px;
   background-color: #ffffff;
@@ -22,8 +20,7 @@
   box-sizing: border-box;
 }
 
-/* Sarlavha */
-.todo-title {
+ .todo-title {
   font-size: 28px;
   color: #1a202c;
   margin-bottom: 24px;
