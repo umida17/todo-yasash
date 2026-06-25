@@ -13,15 +13,13 @@
   width: 100%;
   max-width: 450px;
   background: rgba(255, 255, 255, 0.95);
-  backdrop: blur(10px);
-  border-radius: 24px;
+   border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   padding: 35px 30px;
   box-sizing: border-box;
 }
 
-/* Neon effektli sarlavha */
-.todo-title {
+ .todo-title {
   font-size: 26px;
   color: #2d3748;
   margin-bottom: 25px;
@@ -34,7 +32,6 @@
   display: flex;
   gap: 12px;
   margin-bottom: 25px;
-  position: relative;
 }
 
  .todo-input {
@@ -47,6 +44,8 @@
   outline: none;
   transition: all 0.3s ease;
   color: #2d3748;
+  width: 100%;  
+  box-sizing: border-box;
 }
 
 .todo-input:focus {
@@ -55,8 +54,7 @@
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
 }
 
-/* Dumaloq burchakli "Plus" ikonkali tugma */
-.add-button {
+ .add-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,25 +76,13 @@
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-.add-button:active {
-  transform: translateY(0);
-}
-
- .todo-list {
+/* Ro'yxat */
+.todo-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
   max-height: 350px;
   overflow-y: auto;
-  padding-right: 4px;
-}
-
- .todo-list::-webkit-scrollbar {
-  width: 6px;
-}
-.todo-list::-webkit-scrollbar-thumb {
-  background-color: #cbd5e0;
-  border-radius: 10px;
 }
 
  .todo-item {
@@ -109,16 +95,9 @@
   margin-bottom: 12px;
   border: 1px solid #edf2f7;
   box-shadow: 0 2px 5px rgba(0,0,0,0.01);
-  word-break: break-word;
+  word-break: break-word;  
   gap: 15px;
   transition: all 0.2s ease;
-  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.todo-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
-  border-color: #e2e8f0;
 }
 
 .task-text {
@@ -126,6 +105,7 @@
   color: #4a5568;
   font-weight: 500;
   line-height: 1.4;
+  flex: 1;
 }
 
  .delete-button {
@@ -140,28 +120,56 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  flex-shrink: 0; 
+  flex-shrink: 0;  
 }
 
 .delete-button:hover {
   background-color: #e53e3e;
   color: #ffffff;
-  transform: scale(1.05);
 }
 
-.delete-button:active {
-  transform: scale(0.95);
-}
-
- .empty-message {
+.empty-message {
   text-align: center;
   color: #a0aec0;
   font-size: 15px;
   margin-top: 15px;
-  font-style: italic;
 }
 
- @keyframes slideUp {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+ @media (max-width: 480px) {
+  .todo-container {
+    padding: 10px; 
+  }
+
+  .todo-box {
+    padding: 20px 15px; 
+    border-radius: 16px;
+  }
+
+  .todo-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    gap: 8px;  
+  }
+
+  .todo-input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .add-button {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .todo-item {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .task-text {
+    font-size: 15px;
+  }
 }
