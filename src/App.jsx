@@ -23,7 +23,13 @@
         />
         <button onClick={addTask}>Qo'shish</button>
 
-      
+      <ul>
+        {tasks.map((el,index)=>(
+          <li key={index}>
+            {el}
+          </li>
+        ))}
+      </ul>
 
 
      </div>
