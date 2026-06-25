@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="todo-container">
       <div className="todo-box">
-        <h1 className="todo-title">Vazifalar Ro'yxati</h1>
+        <h1 className="todo-title">Todo Ammaliyoti</h1>
         
         <div className="input-group">
           <input
