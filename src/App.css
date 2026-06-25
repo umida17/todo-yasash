@@ -1,119 +1,152 @@
- 
  .todo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f4f6f9;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   padding: 20px;
   box-sizing: border-box;
 }
 
  .todo-box {
   width: 100%;
-  max-width: 480px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  padding: 35px 30px;
   box-sizing: border-box;
 }
 
- .todo-title {
-  font-size: 28px;
-  color: #1a202c;
-  margin-bottom: 24px;
+/* Neon effektli sarlavha */
+.todo-title {
+  font-size: 26px;
+  color: #2d3748;
+  margin-bottom: 25px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
  .input-group {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  width: 100%;
+  gap: 12px;
+  margin-bottom: 25px;
+  position: relative;
 }
 
  .todo-input {
   flex: 1;
-  padding: 12px 16px;
+  padding: 14px 20px;
   font-size: 16px;
+  background-color: #f7fafc;
   border: 2px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 16px;
   outline: none;
-  transition: border-color 0.2s;
-  min-width: 0;  
+  transition: all 0.3s ease;
+  color: #2d3748;
 }
 
 .todo-input:focus {
-  border-color: #3182ce;
+  border-color: #667eea;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
 }
 
-/* Qo'shish tugmasi */
+/* Dumaloq burchakli "Plus" ikonkali tugma */
 .add-button {
-  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 24px;
   font-size: 16px;
-  background-color: #3182ce;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s, transform 0.1s;
-  white-space: nowrap;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .add-button:hover {
-  background-color: #2b6cb0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 .add-button:active {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
  .todo-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  max-height: 400px;
+  max-height: 350px;
   overflow-y: auto;
+  padding-right: 4px;
 }
 
-/* Har bir vazifa qatori */
-.todo-item {
+ .todo-list::-webkit-scrollbar {
+  width: 6px;
+}
+.todo-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 10px;
+}
+
+ .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
-  background-color: #f7fafc;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  padding: 14px 18px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 12px;
   border: 1px solid #edf2f7;
-  word-break: break-word;  
-  gap: 10px;
-  animation: fadeIn 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+  word-break: break-word;
+  gap: 15px;
+  transition: all 0.2s ease;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  border-color: #e2e8f0;
 }
 
 .task-text {
   font-size: 16px;
   color: #4a5568;
-  flex: 1;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
  .delete-button {
-  padding: 6px 12px;
-  font-size: 14px;
-  background-color: #e53e3e;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #fff5f5;
+  color: #e53e3e;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition: all 0.2s ease;
+  flex-shrink: 0; 
 }
 
 .delete-button:hover {
-  background-color: #c53030;
+  background-color: #e53e3e;
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
 .delete-button:active {
@@ -124,10 +157,11 @@
   text-align: center;
   color: #a0aec0;
   font-size: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
+  font-style: italic;
 }
 
- @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
+ @keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
