@@ -13,6 +13,8 @@
   };
 
 
+  
+
    return (
      <div>
        <h1>Todo Ammalari</h1>
@@ -27,6 +29,7 @@
         {tasks.map((el,index)=>(
           <li key={index}>
             {el}
+            <button onClick={() => deleteBtn(index)}>Delete</button>
           </li>
         ))}
       </ul>
