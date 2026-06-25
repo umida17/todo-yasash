@@ -16,7 +16,16 @@
    return (
      <div>
        <h1>Todo Ammalari</h1>
-       
+       <input
+        type="text" 
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+        />
+        <button onClick={addTask}>Qo'shish</button>
+
+      
+
+
      </div>
    )
  }
