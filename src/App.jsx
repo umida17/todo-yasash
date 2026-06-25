@@ -13,7 +13,10 @@
   };
 
 
-  
+  const deleteBtn = (index) => {
+    const newTodos = tasks.filter((_, i) => i !== index);
+    setTasks(newTodos);
+  };
 
    return (
      <div>
